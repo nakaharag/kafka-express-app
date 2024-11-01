@@ -1,0 +1,17 @@
+{
+  "name": "kafka-express-app",
+  "version": "1.0.0",
+  "description": "Express app with Kafka integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "kafkajs": "^2.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
