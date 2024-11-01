@@ -70,6 +70,6 @@ Additionally, the app utilizes Node.js clustering to leverage multi-core CPU arc
 
 # Contact
 - Gustavo Nakahara
-- gustavo.nakahara
+- gustavo.nakahara@gmail.com
 - [Github - https://github.com/nakaharag](https://github.com/nakaharag)
 - [Linkedin - https://linkedin.com/in/gustavonakahara](https://linkedin.com/in/gustavonakahara)
