@@ -12,16 +12,8 @@
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
-- [Testing](#testing)
-- [Clustering](#clustering)
-- [Kafka Consumer](#kafka-consumer)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Overview
@@ -67,6 +59,31 @@ Additionally, the app utilizes Node.js clustering to leverage multi-core CPU arc
     ├── package.json
     ├── Dockerfile
     └── docker-compose.yml
+
+## Prerequisites
+
+Make sure to have docker and docker installed in your machine prior to execution
+
+### Running the Application
+
+RUN: `docker compose up --build`
+
+## API Endpoints
+
+POST: http://localhost:3005/api/messages/send
+
+Body (json raw):
+````
+{
+    "message": {
+        "topic": "topic-to-send.request",
+        "Items": {
+            "item 1": "item 1",
+            "item 2": "item 2"
+        }
+    }
+}
+````
 
 # Contact
 - Gustavo Nakahara

@@ -6,7 +6,10 @@ const connectProducer = async () => {
   if (!producer) {
     const kafka = new Kafka({
       clientId: `kafka-express-app-${process.pid}`,
-      brokers: [process.env.KAFKA_BROKER || 'localhost:9092'],
+      // clientId: `kafka-express-app-${process.pid}`,
+      brokers: [process.env.KAFKA_BROKER],
+      groupId: process.env.KAFKA_GROUP_ID,
+      // brokers: [process.env.KAFKA_BROKER || 'localhost:9092'],
     });
 
     producer = kafka.producer();
@@ -25,7 +28,7 @@ connectProducer();
 exports.sendMessage = async (topic, message) => {
   await producer.send({
     topic,
-    messages: [{ value: message }],
+    messages: [{ value: JSON.stringify(message) }],
   });
 };
 

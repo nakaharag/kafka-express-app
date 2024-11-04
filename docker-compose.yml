@@ -21,11 +21,21 @@ services:
   app:
     build: .
     ports:
-      - '3000:3000'
+      - '3005:3005'
     depends_on:
       - kafka
     environment:
       - KAFKA_BROKER=kafka:9092
+    command: npm run dev
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules
+        - action: rebuild
+          path: package.json
     deploy:
       resources:
         limits:
